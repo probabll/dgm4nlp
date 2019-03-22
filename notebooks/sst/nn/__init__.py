@@ -1,4 +1,4 @@
-from discrete.nn.lstm_encoder import LSTMEncoder
-from discrete.nn.rcnn_encoder import RCNNEncoder
+from sst.nn.lstm_encoder import LSTMEncoder
+from sst.nn.rcnn_encoder import RCNNEncoder
 
 
