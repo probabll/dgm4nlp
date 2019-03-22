@@ -3,8 +3,7 @@ from collections import defaultdict, OrderedDict
 from itertools import count
 import numpy as np
 
-from discrete.util import get_minibatch, prepare_minibatch
-#from discrete.util import get_z_stats
+from sst.util import get_minibatch, prepare_minibatch
 
 
 def get_histogram_counts(z=None, mask=None, mb=None):
