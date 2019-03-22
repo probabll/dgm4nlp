@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from discrete.nn.rcnn import RCNN
+from sst.nn.rcnn import RCNN
 
 
 class RCNNEncoder(nn.Module):
