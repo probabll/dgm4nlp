@@ -53,17 +53,18 @@ def evaluate(model, data, batch_size=25, device=None, iter_i=0, cfg=None):
         batch_size = targets.size(0)
         with torch.no_grad():
 
-            py, q_z, z = model(x)
+            py, qz, z = model(x)
             predictions = model.predict(py)
 
             loss, terms = model.get_loss(
-                py, targets,
-                q_z=q_z,
-                z=z,
-                iter_i=iter_i,
-                mask=mask)
+                y=targets,
+                py=py, 
+                qz=qz,
+                z=z,                
+                mask=mask,
+                iter_i=iter_i,)
                     
-            totals['loss'] = totals.get('loss', 0.) + loss.item() * batch_size            
+            totals['loss'] = totals.get('loss', 0.) + loss.item() * batch_size
             
             for k, v in terms.items():
                 totals[k] = totals.get(k, 0.) + v * batch_size
